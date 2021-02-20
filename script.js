@@ -1,15 +1,14 @@
 const questions = [
   {question:'Это первый вопрос?', currentAnswer:'Да'},
   {question:'Это второй вопрос?', currentAnswer:'Да'},
-  {question:'Это третий вопрос?', currentAnswer:'Нет'}
+  {question:'Это третий вопрос?', currentAnswer:'Да'},
+  {question:'Это следующий вопрос?', currentAnswer:'Нет'}
 ]
 
-const сurrentResult = questions.filter((item) =>
-      item.currentAnswer === 'Да')
+const result = questions.map((item) =>
+  item.currentAnswer)
 
-        console.log(сurrentResult);
+const showResult = result.filter((item) =>
+  item === 'Да')
 
-const unCurrentResult = questions.filter((item) =>
-      item.currentAnswer === 'Нет')
-
-        console.log(unCurrentResult);
+document.body.innerHTML = 'Количество правильных ответов - ' + showResult.length;
